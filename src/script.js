@@ -1,16 +1,14 @@
 function initializeTheme() {
-    const getTheme = () => localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-    const toggleTheme = () => {
+    document.getElementById("theme-toggle").addEventListener("click", () => {
         const isDark = document.documentElement.classList.toggle("dark");
+        document.getElementById("theme-toggle").textContent = isDark ? "🌜": "🌞";
         localStorage.setItem("theme", isDark ? "dark" : "light");
-    }
+    });
 
-    document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
-
+    const currentTheme = () => localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     // Apply the theme from local storage when the page loads
-    const currentTheme = getTheme();
-    document.documentElement.classList.add(currentTheme);
+    document.documentElement.classList.add(currentTheme());
 }
 
 initializeTheme();
