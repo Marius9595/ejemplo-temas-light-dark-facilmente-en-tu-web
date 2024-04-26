@@ -1,0 +1,75 @@
+@import './colors.css';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color);
+}
+
+header {
+    background-color: var(--color-primary);
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+article {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 10px solid var(--color-secondary);
+}
+
+footer {
+    background-color: var(--color-primary);
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color);
+    font-weight: bold;
+}
+
+a:focus,
+a:hover {
+    color: var(--color--lighter);
+}
+
+
+section {
+    margin-bottom: 20px;
+    align-self: self-start;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h2, p, ul {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
